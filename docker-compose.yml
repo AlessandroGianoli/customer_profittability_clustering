@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  datascience_jupyter_notebook:
+    build: 
+      context: .
+      dockerfile: Dockerfile 
+    environment:
+      - JUPYTER_TOKEN=jupiter
+    ports:
+      - 8888:8888 
+    volumes:
+      - ./:/home/jovyan
+    container_name: jupyter_notebook  
